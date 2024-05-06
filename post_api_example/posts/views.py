@@ -22,7 +22,7 @@ def post_list(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
-def post_detail(reqeust, id):
+def post_detail(request, id):
     post = Post.objects.get(id=id)
     serializer = PostSerializer(post)
     return Response(serializer.data)
